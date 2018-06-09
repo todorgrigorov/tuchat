@@ -1,0 +1,11 @@
+export default {
+    ID: 'ID',
+    STUDENT_ID: 'STUDENT_ID',
+    PHOTO_ID: 'PHOTO_ID',
+    CODE: 'CODE',
+    FIRST_NAME: 'FIRST_NAME',
+    LAST_NAME: 'LAST_NAME',
+    FACULTY_ID: 'FACULTY_ID',
+    SPECIALTY_ID: 'SPECIALTY_ID',
+    GROUP: 'GROUP'
+}
