@@ -7,6 +7,7 @@ import feed from "./feed";
 import messages from "./messages";
 import attachments from "./attachments";
 import teachers from "./teachers";
+import auth from "./auth";
 
 export default [{
     route: '/users',
@@ -35,4 +36,7 @@ export default [{
 }, {
     route: '/teachers',
     router: teachers
+}, {
+    route: '/auth',
+    router: auth
 }];

@@ -25,23 +25,6 @@ router.on(routeTypes.GET, '/student/:code', async (req, res) => {
     }
 });
 
-router.on(routeTypes.POST, '/login', async (req, res) => {
-    // TODO: implement pass hashing, JWT auth
-    const user = await User.findOne({
-        code: req.body.code,
-        password: req.body.password
-    }, {
-            password: 0,
-            device: 0
-        });
-
-    if (user) {
-        res.status(200).json(user);
-    } else {
-        res.status(403).send();
-    }
-});
-
 router.on(routeTypes.POST, '/device', async (req, res) => {
     const user = await User.findById(req.body.id, {
         password: 0,

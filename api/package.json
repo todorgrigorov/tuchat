@@ -28,7 +28,7 @@
     "dependencies": {
         "agenda": "^1.0.3",
         "babel-polyfill": "^6.26.0",
-        "bcrypt": "^1.0.3",
+        "bcrypt": "^2.0.1",
         "bluebird": "^3.5.0",
         "body-parser": "^1.17.2",
         "cors": "^2.8.4",
@@ -37,7 +37,7 @@
         "express": "^4.15.4",
         "global": "^4.3.2",
         "helmet": "^3.9.0",
-        "jsonwebtoken": "^7.4.3",
+        "jsonwebtoken": "^8.3.0",
         "lodash": "^4.17.5",
         "moment": "^2.20.1",
         "moment-timezone": "^0.5.14",

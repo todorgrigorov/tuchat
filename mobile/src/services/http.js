@@ -1,6 +1,8 @@
 import axios from "axios";
 import logger from './logger';
 import apiRoutes from "../config/api-routes";
+import settingsProvider from './settings-provider';
+import settings from '../config/settings';
 
 const instance = axios.create({
     baseURL: apiRoutes.ADDRESS,
@@ -18,11 +20,13 @@ export default {
 
         let response = {};
         try {
+            const authToken = await settingsProvider.get(settings.AUTH_TOKEN);
             response = await instance.request({
                 method: verb,
                 url,
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${authToken}`
                 },
                 data: body ? JSON.stringify(body) : null
             });

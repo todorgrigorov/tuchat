@@ -112,17 +112,7 @@ export default class LoginScreen extends Component {
                     editable: false
                 });
 
-                const result = await http.request(`${apiRoutes.USERS_STUDENT_BY_CODE}/${code}`);
-
-                if (result && result.isOkay) {
-                    this.showPasswordInput();
-                } else if (result.isNotFound) {
-                    Alert.alert('You have entered a wrong sign-in code.');
-
-                    this.setState({
-                        editable: true
-                    });
-                }
+                this.showPasswordInput();
             } else {
                 Alert.alert('The sign-in code must only contain digits.');
             }
@@ -149,16 +139,18 @@ export default class LoginScreen extends Component {
             });
 
             const result = await http.request(
-                `${apiRoutes.USERS_LOGIN}`,
+                `${apiRoutes.AUTH}`,
                 'POST', {
                     code: this.state.code,
                     password
                 });
 
             if (result.isOkay && result.data) {
+                settingsProvider.set(settings.AUTH_TOKEN, result.data.token);
+                Alert.alert(await settingsProvider.get(settings.AUTH_TOKEN))
                 await this.login(result.data);
-            } else if (result.isForbidden) {
-                Alert.alert('You have entered a wrong password.');
+            } else if (result.isNotValid) {
+                Alert.alert('You have entered wrong sign-in credentials.');
 
                 this.setState({
                     editable: true

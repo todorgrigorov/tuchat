@@ -1,6 +1,7 @@
 import express from "express";
 import _ from "lodash";
 import routeTypes from "./route-types";
+import auth from '../middleware/auth';
 
 async function onGet(req, res) {
     if (req.params.id) {
@@ -62,6 +63,10 @@ export default class BasicRouter {
     constructor(options = {}) {
         this.options = options;
         this.expressRouter = express.Router();
+
+        if (options.useAuth || typeof options.useAuth === 'undefined') {
+            this.expressRouter.use(auth);
+        }
 
         if (options.routes) {
             if (_.includes(options.routes, routeTypes.GET) || _.includes(options.routes, routeTypes.ALL)) {

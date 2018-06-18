@@ -9,6 +9,7 @@ const config = {
     environment: process.env.NODE_ENV,
     port: process.env.PORT,
     socketsPort: process.env.SOCKETS_PORT,
+    jwtSecret: process.env.JWT_SECRET,
     mongo: {
         host: process.env.MONGO_HOST,
         useDebug: process.env.MONGO_DEBUG

@@ -11,6 +11,7 @@ export default {
     },
     set(key, value) {
         const isString = (value instanceof String || typeof value === "string");
+        debugger
         AsyncStorage.setItem(key, isString ? value : JSON.stringify(value));
     },
 

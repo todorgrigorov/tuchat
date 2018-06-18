@@ -3,6 +3,7 @@ import envConfig from "./env-config";
 export default {
     ADDRESS: `${envConfig.api.address}:${envConfig.api.port}`,
     SOCKETS_ADDRESS: `${envConfig.api.address}:${envConfig.api.socketsPort}`,
+    AUTH: '/auth',
     USERS: '/users',
     USERS_STUDENT_BY_CODE: '/users/student',
     USERS_LOGIN: '/users/login',

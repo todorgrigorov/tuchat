@@ -7,8 +7,4 @@ const router = new BasicRouter({
     routes: [routeTypes.GET, routeTypes.GET_ALL, routeTypes.PUT]
 });
 
-router.on(routeTypes.POST, '/', async (req, res) => {
-    res.status(201).json(await Student.createWithUser(req.body));
-});
-
 export default router;

@@ -21,7 +21,7 @@ import chat from "./services/chat";
 
 // MONGO
 mongoose.Promise = Promise;
-mongoose.connect(envConfig.mongo.host, {
+mongoose.connect('mongodb://localhost/tuchat', {
     useMongoClient: true
 });
 

@@ -1,4 +1,5 @@
 export default {
+    AUTH_TOKEN: 'AUTH_TOKEN',
     ID: 'ID',
     STUDENT_ID: 'STUDENT_ID',
     PHOTO_ID: 'PHOTO_ID',
