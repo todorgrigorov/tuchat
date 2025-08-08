@@ -1,7 +1,9 @@
 {
   "presets": [
-    "react-native",
-    "react-native-dotenv"
+    "module:metro-react-native-babel-preset"
+  ],
+  "plugins": [
+    "module:react-native-dotenv"
   ],
   "env": {
     "development": {

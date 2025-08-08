@@ -1,4 +1,4 @@
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import settings from '../config/settings';
 
 export default {
@@ -11,7 +11,6 @@ export default {
     },
     set(key, value) {
         const isString = (value instanceof String || typeof value === "string");
-        debugger
         AsyncStorage.setItem(key, isString ? value : JSON.stringify(value));
     },
 
